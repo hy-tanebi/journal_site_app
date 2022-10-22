@@ -65,7 +65,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit', ['article' => $article]);
     }
 
     /**
@@ -77,7 +77,13 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+
+        $article->title = $request->title;
+        $article->body = $request->body;
+
+        $article->save();
+
+        return redirect('/articles');
     }
 
     /**
@@ -88,6 +94,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+
+        return redirect('/articles');
     }
 }
