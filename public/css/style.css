@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.body {
+    width: 300px;
+    height: 100px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.btn-group {
+    display: flex;
+}
